@@ -5,3 +5,5 @@ cd gtksourceviewmm-3.0.0
 sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 make
 sudo make install
+
+bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
