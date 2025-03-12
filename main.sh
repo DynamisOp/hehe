@@ -7,6 +7,5 @@ sudo pacman -Syu
 
 echo now edit ur pacman.conf xDDDDDDDDDDDDDDDDDDDDDDDDDDDDX
 
-echo installing end-4 dots
-
-bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
+echo installing 
+curl -LO http://gh0stzk.github.io/dotfiles/RiceInstaller
