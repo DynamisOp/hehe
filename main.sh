@@ -8,4 +8,4 @@ sudo pacman -Syu
 echo now edit ur pacman.conf xDDDDDDDDDDDDDDDDDDDDDDDDDDDDX
 
 echo installing 
-curl -LO http://gh0stzk.github.io/dotfiles/RiceInstaller
+curl https://raw.githubusercontent.com/gh0stzk/dotfiles/master/RiceInstaller
