@@ -8,4 +8,4 @@ sudo pacman -Syu
 echo now edit ur pacman.conf xDDDDDDDDDDDDDDDDDDDDDDDDDDDDX
 
 echo installing 
-curl https://raw.githubusercontent.com/gh0stzk/dotfiles/master/RiceInstaller
+bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
