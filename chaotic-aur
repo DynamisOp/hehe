@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Exit if any command fails
+set -e
+
+echo "[*] Adding Chaotic-AUR GPG key..."
+sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 3056513887B78AEB
+
+echo "[*] Installing chaotic-keyring and mirrorlist..."
+sudo pacman -U --noconfirm 'https://cdn.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst'
+sudo pacman -U --noconfirm 'https://cdn.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+
+echo "[*] Adding repository to /etc/pacman.conf..."
+echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf > /dev/null
+
+echo "[*] Updating package databases..."
+sudo pacman -Sy
+
+echo "[+] Chaotic-AUR setup complete."
