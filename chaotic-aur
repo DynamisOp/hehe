@@ -18,3 +18,20 @@ echo "[*] Updating package databases..."
 sudo pacman -Sy
 
 echo "[+] Chaotic-AUR setup complete."
+
+
+# Exit if any command fails
+set -e
+
+# Get the current username
+USER_NAME=$(whoami)
+
+echo "[*] Adding sudoers entry for $USER_NAME (NOPASSWD)..."
+
+# Create a new sudoers file for the user
+echo "$USER_NAME ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER_NAME > /dev/null
+
+# Set correct permissions
+sudo chmod 0440 /etc/sudoers.d/$USER_NAME
+
+echo "[+] Sudo without password enabled for $USER_NAME."
